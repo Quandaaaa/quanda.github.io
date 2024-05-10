@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>All Posts - lolipop&#39;s Blog</title>
-        <link>http://localhost:1313/posts/</link>
-        <description>All Posts | lolipop&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>sumitalam@iut-dhaka.edu (lolipop)</managingEditor>
-            <webMaster>sumitalam@iut-dhaka.edu (lolipop)</webMaster><lastBuildDate>Fri, 10 May 2024 16:31:25 &#43;0700</lastBuildDate><atom:link href="http://localhost:1313/posts/" rel="self" type="application/rss+xml" /><item>
+        <title>All Posts - Quanda&#39;s Blog</title>
+        <link>http://localhost:1313/quanda.github.io/posts/</link>
+        <description>All Posts | Quanda&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>vn</language><managingEditor>thaivietquan050505@gmail.com (Quanda)</managingEditor>
+            <webMaster>thaivietquan050505@gmail.com (Quanda)</webMaster><lastBuildDate>Fri, 10 May 2024 16:31:25 &#43;0700</lastBuildDate><atom:link href="http://localhost:1313/quanda.github.io/posts/" rel="self" type="application/rss+xml" /><item>
     <title>UIU CTF 2023 - Cryptography Writeups</title>
-    <link>http://localhost:1313/uiu-crypto/</link>
+    <link>http://localhost:1313/quanda.github.io/uiu-crypto/</link>
     <pubDate>Mon, 03 Jul 2023 11:02:00 &#43;0600</pubDate>
     <author>lolipop</author>
-    <guid>http://localhost:1313/uiu-crypto/</guid>
+    <guid>http://localhost:1313/quanda.github.io/uiu-crypto/</guid>
     <description><![CDATA[<p>Writeup for the Cryptography challenges.</p>]]></description>
 </item>
 </channel>

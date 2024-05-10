@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<html lang="vn">
+    <head><script src="/quanda.github.io/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=quanda.github.io/livereload" data-no-instant defer></script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>UIU CTF 2023 - Cryptography Writeups - lolipop&#39;s Blog</title><meta name="Description" content="Writeup for the Cryptography challenges."><meta property="og:url" content="http://localhost:1313/uiu-crypto/">
-  <meta property="og:site_name" content="lolipop&#39;s Blog">
+        <title>UIU CTF 2023 - Cryptography Writeups - Quanda&#39;s Blog</title><meta name="Description" content="Writeup for the Cryptography challenges."><meta property="og:url" content="http://localhost:1313/quanda.github.io/uiu-crypto/">
+  <meta property="og:site_name" content="Quanda&#39;s Blog">
   <meta property="og:title" content="UIU CTF 2023 - Cryptography Writeups">
   <meta property="og:description" content="Writeup for the Cryptography challenges.">
-  <meta property="og:locale" content="en">
+  <meta property="og:locale" content="vn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2023-07-03T11:02:00+06:00">
@@ -23,19 +23,19 @@
 <meta name="application-name" content="CTF Blogs">
 <meta name="apple-mobile-web-app-title" content="CTF Blogs"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/uiu-crypto/" /><link rel="stylesheet" href="/css/style.scss"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/quanda.github.io/uiu-crypto/" /><link rel="stylesheet" href="/quanda.github.io/css/style.scss"><link rel="preload" href="/quanda.github.io/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/quanda.github.io/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/quanda.github.io/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/quanda.github.io/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
         "headline": "UIU CTF 2023 - Cryptography Writeups",
-        "inLanguage": "en",
+        "inLanguage": "vn",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http:\/\/localhost:1313\/uiu-crypto\/"
+            "@id": "http:\/\/localhost:1313\/quanda.github.io\/uiu-crypto\/"
         },"genre": "posts","keywords": "crypto, UIU CTF, english","wordcount":  1774 ,
-        "url": "http:\/\/localhost:1313\/uiu-crypto\/","datePublished": "2023-07-03T11:02:00+06:00","dateModified": "2023-07-03T11:02:00+06:00","publisher": {
+        "url": "http:\/\/localhost:1313\/quanda.github.io\/uiu-crypto\/","datePublished": "2023-07-03T11:02:00+06:00","dateModified": "2023-07-03T11:02:00+06:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -48,10 +48,10 @@
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="/" title="lolipop&#39;s Blog"><span id="id-1" class="typeit"></span></a>
+            <a href="/quanda.github.io/" title="Quanda&#39;s Blog"><span id="id-1" class="typeit"></span></a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/aboutme/"> About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+            <div class="menu-inner"><a class="menu-item" href="/quanda.github.io/posts/"> Posts </a><a class="menu-item" href="/quanda.github.io/tags/"> Tags </a><a class="menu-item" href="/quanda.github.io/aboutme/"> About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
                             <i class="fas fa-search fa-fw" aria-hidden="true"></i>
@@ -71,7 +71,7 @@
     <div class="header-container">
         <div class="header-wrapper">
             <div class="header-title">
-                <a href="/" title="lolipop&#39;s Blog"><span id="id-2" class="typeit"></span></a>
+                <a href="/quanda.github.io/" title="Quanda&#39;s Blog"><span id="id-2" class="typeit"></span></a>
             </div>
             <div class="menu-toggle" id="menu-toggle-mobile">
                 <span></span><span></span><span></span>
@@ -93,7 +93,7 @@
                     <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
                         Cancel
                     </a>
-                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/aboutme/" title="">About Me</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                </div><a class="menu-item" href="/quanda.github.io/posts/" title="">Posts</a><a class="menu-item" href="/quanda.github.io/tags/" title="">Tags</a><a class="menu-item" href="/quanda.github.io/aboutme/" title="">About Me</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                 <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
             </a></div>
     </div>
@@ -107,7 +107,7 @@
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">UIU CTF 2023 - Cryptography Writeups</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://tsumiiiiiiii.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>lolipop</a></span>&nbsp;<span class="post-category">included in <a href="/categories/writeups/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Writeups</a></span></div>
+            <div class="post-meta-line"><span class="post-author"><a href="https://tsumiiiiiiii.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>lolipop</a></span>&nbsp;<span class="post-category">included in <a href="/quanda.github.io/categories/writeups/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Writeups</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-07-03">2023-07-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1774 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;9 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -574,18 +574,18 @@ $$({c_1 ^ a}) ^ {-1} * c_2  \equiv\ g^{-2ak} * g^{2ak} * m^2 \equiv\ m^2 \mod p$
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/uiu-crypto/index.md" target="_blank">Read Markdown</a>
+                            <a class="link-to-markdown" href="/quanda.github.io/uiu-crypto/index.md" target="_blank">Read Markdown</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://localhost:1313/uiu-crypto/" data-title="UIU CTF 2023 - Cryptography Writeups" data-hashtags="crypto,UIU CTF,english"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/uiu-crypto/" data-hashtag="crypto"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="http://localhost:1313/uiu-crypto/"><i class="fab fa-reddit fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://localhost:1313/quanda.github.io/uiu-crypto/" data-title="UIU CTF 2023 - Cryptography Writeups" data-hashtags="crypto,UIU CTF,english"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/quanda.github.io/uiu-crypto/" data-hashtag="crypto"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="http://localhost:1313/quanda.github.io/uiu-crypto/"><i class="fab fa-reddit fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/crypto/">Crypto</a>,&nbsp;<a href="/tags/uiu-ctf/">UIU CTF</a>,&nbsp;<a href="/tags/english/">English</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/quanda.github.io/tags/crypto/">Crypto</a>,&nbsp;<a href="/quanda.github.io/tags/uiu-ctf/">UIU CTF</a>,&nbsp;<a href="/quanda.github.io/tags/english/">English</a></section>
         <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/quanda.github.io/">Home</a></span>
         </section>
     </div>
 
@@ -603,5 +603,5 @@ $$({c_1 ^ a}) ^ {-1} * c_2  \equiv\ g^{-2ak} * g^{2ak} * m^2 \equiv\ m^2 \mod p$
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
                 <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/index.umd.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"data":{"id-1":"lolipop","id-2":"lolipop"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><link rel="stylesheet" href="/quanda.github.io/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/quanda.github.io/lib/katex/katex.min.css"><script type="text/javascript" src="/quanda.github.io/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/quanda.github.io/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/quanda.github.io/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/quanda.github.io/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/quanda.github.io/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="/quanda.github.io/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="/quanda.github.io/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/quanda.github.io/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/quanda.github.io/lib/typeit/index.umd.js"></script><script type="text/javascript" src="/quanda.github.io/lib/katex/katex.min.js"></script><script type="text/javascript" src="/quanda.github.io/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/quanda.github.io/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/quanda.github.io/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"data":{"id-1":"lolipop","id-2":"lolipop"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/quanda.github.io/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/quanda.github.io/js/theme.min.js"></script></body>
 </html>

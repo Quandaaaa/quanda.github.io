@@ -9,7 +9,7 @@ title = "Quanda's Blog"
 # language code ["en", "zh-CN", "fr", "pl", ...]
 languageCode = "vn"
 # language name ["English", "简体中文", "Français", "Polski", ...]
-languageName = "vn"
+languageName = "Vietnamese"
 # whether to include Chinese/Japanese/Korean
 hasCJKLanguage = false
 
@@ -77,7 +77,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   #  date format
   dateFormat = "2006-01-02"
   # website title for Open Graph and Twitter Cards
-  title = "lolipop's blog"
+  title = "Quanda's Blog"
   # website description for RSS, SEO, Open Graph and Twitter Cards
   description = "$ sudo apt install ctfwriteups"
   # website images for Open Graph and Twitter Cards
@@ -94,11 +94,11 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       # URL of the LOGO
       logo = ""
       # title name
-      name = "lolipop"
+      name = "Quanda"
       # you can add extra information before the name (HTML format is supported), such as icons
       pre = ""
       # you can add extra information after the name (HTML format is supported), such as icons
-      post = ""#"<i class="fa-sharp fa-light fa-lollipop"></i>"
+      post = ""#"<i class="fa-sharp fa-light fa-Quanda"></i>"
       #  whether to use typeit animation for title name
       typeit = true
 
