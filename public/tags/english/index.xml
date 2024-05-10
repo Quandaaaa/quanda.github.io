@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>English - Tag - lolipop&#39;s Blog</title>
+        <link>http://localhost:1313/tags/english/</link>
+        <description>English - Tag - lolipop&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>sumitalam@iut-dhaka.edu (lolipop)</managingEditor>
+            <webMaster>sumitalam@iut-dhaka.edu (lolipop)</webMaster><lastBuildDate>Mon, 03 Jul 2023 11:02:00 &#43;0600</lastBuildDate><atom:link href="http://localhost:1313/tags/english/" rel="self" type="application/rss+xml" /><item>
+    <title>UIU CTF 2023 - Cryptography Writeups</title>
+    <link>http://localhost:1313/uiu-crypto/</link>
+    <pubDate>Mon, 03 Jul 2023 11:02:00 &#43;0600</pubDate>
+    <author>lolipop</author>
+    <guid>http://localhost:1313/uiu-crypto/</guid>
+    <description><![CDATA[<p>Writeup for the Cryptography challenges.</p>]]></description>
+</item>
+</channel>
+</rss>
