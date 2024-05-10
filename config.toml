@@ -1,15 +1,15 @@
-baseURL = "https://tsumiiiiiiii.github.io/"
+baseURL = "https://quandaaaa.github.io/quanda.github.io/"
 
 # Change the default theme to be use when building the site with Hugo
 theme = "LoveIt"
 
 # website title
-title = "lolipop's Blog"
+title = "Quanda's Blog"
 
 # language code ["en", "zh-CN", "fr", "pl", ...]
-languageCode = "en"
+languageCode = "vn"
 # language name ["English", "简体中文", "Français", "Polski", ...]
-languageName = "English"
+languageName = "vn"
 # whether to include Chinese/Japanese/Korean
 hasCJKLanguage = false
 
@@ -32,9 +32,9 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
 # Author config
 [author]
-  name = "lolipop"
-  email = "sumitalam@iut-dhaka.edu"
-  link = "https://tsumiiiiiiii.github.io/"
+  name = "Quanda"
+  email = "thaivietquan050505@gmail.com"
+  link = "https://quandaaaa.github.io/quanda.github.io/"
 
 # Menu config
 [menu]
@@ -185,7 +185,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       # Gravatar Email for preferred avatar in home page
       gravatarEmail = ""
       # URL of avatar shown in home page
-      avatarURL = "https://avatars.githubusercontent.com/u/31077557?v=4"
+      avatarURL = "https://i.pinimg.com/736x/77/a5/44/77a5443b714359383226f07c0227e1c7.jpg"
       #  title shown in home page (HTML format is supported)
       title = "CTF Blogs"
       # subtitle shown in home page (HTML format is supported)
@@ -207,10 +207,10 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
   # Social config about the author
   [params.social]
-    GitHub = "Tsumiiiiiiii"
-    Discord = "Tsumi #1307"
+    GitHub = "Quandaaaa"
+    Discord = "thaiquan_54524"
     #RootMe= ""
-    Email = "sumitalam@iut-dhaka.edu"
+    Email = "thaivietquan050505@gmail.com"
     #RSS = true # 
 
   #  Page global config
