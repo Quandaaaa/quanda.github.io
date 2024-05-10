@@ -7,5 +7,5 @@ From KCSC
 
 ## Contact Me
 
-You can contact me via [Email](mailto:sumitalam@iut-dhaka.edu), or [Github](https://github.com/Quandaaaa).
+You can contact me via [Email](thaivietquan050505@gmail.com), or [Github](https://github.com/Quandaaaa).
 

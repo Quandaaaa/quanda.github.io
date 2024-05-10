@@ -2,13 +2,14 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://localhost:1313/quanda.github.io/uiu-crypto/</loc><lastmod>2023-07-03T11:02:00&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://localhost:1313/quanda.github.io/posts/</loc><lastmod>2024-05-10T16:31:25&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://localhost:1313/quanda.github.io/</loc><lastmod>2024-05-10T16:31:25&#43;07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://localhost:1313/quanda.github.io/categories/</loc><lastmod>2023-07-03T11:02:00&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://localhost:1313/quanda.github.io/tags/crypto/</loc><lastmod>2023-07-03T11:02:00&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://localhost:1313/quanda.github.io/tags/english/</loc><lastmod>2023-07-03T11:02:00&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://localhost:1313/quanda.github.io/tags/</loc><lastmod>2023-07-03T11:02:00&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://localhost:1313/quanda.github.io/tags/uiu-ctf/</loc><lastmod>2023-07-03T11:02:00&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://localhost:1313/quanda.github.io/categories/writeups/</loc><lastmod>2023-07-03T11:02:00&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://localhost:1313/quanda.github.io/aboutme/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
+            <loc>https://quanda.github.io/squ1rrel-ctf-2024/</loc><lastmod>2023-07-22T15:20:00&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://quanda.github.io/uiu-crypto/</loc><lastmod>2023-07-03T11:02:00&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://quanda.github.io/categories/</loc><lastmod>2023-07-22T15:20:00&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://quanda.github.io/tags/crypto/</loc><lastmod>2023-07-22T15:20:00&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://quanda.github.io/posts/</loc><lastmod>2023-07-22T15:20:00&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://quanda.github.io/</loc><lastmod>2023-07-22T15:20:00&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://quanda.github.io/tags/</loc><lastmod>2023-07-22T15:20:00&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://quanda.github.io/categories/writeups/</loc><lastmod>2023-07-22T15:20:00&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://quanda.github.io/tags/english/</loc><lastmod>2023-07-03T11:02:00&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://quanda.github.io/tags/uiu-ctf/</loc><lastmod>2023-07-03T11:02:00&#43;06:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://quanda.github.io/aboutme/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>

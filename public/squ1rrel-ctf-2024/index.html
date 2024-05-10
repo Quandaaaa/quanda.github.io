@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="vn">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>SQU1RREL CTF 2024 - Quanda&#39;s Blog</title><meta name="Description" content="Writeup for The Cryptography challenge."><meta property="og:title" content="SQU1RREL CTF 2024" />
+<meta property="og:description" content="Writeup for The Cryptography challenge." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://quanda.github.io/squ1rrel-ctf-2024/" /><meta property="og:image" content="https://quanda.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-07-20T15:02:00+06:00" />
+<meta property="article:modified_time" content="2023-07-22T15:20:00+06:00" /><meta property="og:site_name" content="Quanda&#39;s Blog" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://quanda.github.io/logo.png"/>
+
+<meta name="twitter:title" content="SQU1RREL CTF 2024"/>
+<meta name="twitter:description" content="Writeup for The Cryptography challenge."/>
+<meta name="application-name" content="CTF Blogs">
+<meta name="apple-mobile-web-app-title" content="CTF Blogs"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://quanda.github.io/squ1rrel-ctf-2024/" /><link rel="prev" href="https://quanda.github.io/uiu-crypto/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "SQU1RREL CTF 2024",
+        "inLanguage": "vn",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/quanda.github.io\/squ1rrel-ctf-2024\/"
+        },"genre": "posts","keywords": "crypto","wordcount":  838 ,
+        "url": "https:\/\/quanda.github.io\/squ1rrel-ctf-2024\/","datePublished": "2023-07-20T15:02:00+06:00","dateModified": "2023-07-22T15:20:00+06:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Quanda"
+            },"description": "Writeup for The Cryptography challenge."
+    }
+    </script></head>
+    <body data-header-desktop="auto" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Quanda&#39;s Blog"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/aboutme/"> About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Quanda&#39;s Blog"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/aboutme/" title="">About Me</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">SQU1RREL CTF 2024</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://quanda.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Quanda</a></span>&nbsp;<span class="post-category">included in <a href="/categories/writeups/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Writeups</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-07-20">2023-07-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;838 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#squ1rrel-treasury">squ1rrel treasury</a></li>
+    <li><a href="#squ1rrel-lottery">Squ1rrel Lottery</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>Write-up for SQU1RREL CTF 2024</p>
+<h1 id="lazy-rsa">Lazy RSA</h1>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Challenge Information<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li><strong>Point:</strong> 110</li>
+<li><strong>Description:</strong> &ldquo;Generating primes is too hard, but i did find a couple posted online!&rdquo;</li>
+</ul>
+</div>
+        </div>
+    </div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">n: 23690620655271165329693230765997410033604713853187305472268813793031152348107488119317901392104240429826482611449247251262846508667797483465355228800439339041030982259847598574606272955688345490638311164838117491821117626835340577511562130640807587611523935604871183668968359720411023759980144229161581597397061850707647104033348795132205561234674677139395868595692235525931999596382758921793937149945229459379437008216713404350896206374483356969246476531491049930769999387038678280465689487577291475554699094024761030833540509263174840007922218340417888061099317752496279552046029470370474619439450870110783844218281
+</span></span><span class="line"><span class="cl">e: 65537
+</span></span><span class="line"><span class="cl">ct: 11420169733597912638453974310976296342840438772934899653944946284527921765463891354182152294616337665313108085636067061251485792996493148094827999964385583364992542843630846911864602981658349693548380259629884212903554470004231160866680745154066318419977485221228944716844036265911222656710479650139274719426252576406561307088938784324291655853920727176132853663822020880574204790442647169649094846806057218165102873847070323190392619997632103724159815363319643022552432448214770378596825200154298562513279104608157870845848578603703757405758227316242247843290673221718467366000253484278487854736033323783510299081405
+</span></span></code></pre></div><p>N factor được nên ta dễ dàng có được FLAG.</p>
+<blockquote>
+<p>Flag: squ1rrel{laziness_will_be_the_answer_eventually}</p>
+</blockquote>
+<h1 id="rsa-rsa-rsa">RSA RSA RSA</h1>
+<p><div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Challenge Information<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"></div>
+        </div>
+    </div>
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://github.com/Quandaaaa/Wargames/blob/main/squ1rrel%20CTF%202024/write-up-squa1rrel-ctf-2024/image-1.png?raw=true"
+        data-srcset="https://github.com/Quandaaaa/Wargames/blob/main/squ1rrel%20CTF%202024/write-up-squa1rrel-ctf-2024/image-1.png?raw=true, https://github.com/Quandaaaa/Wargames/blob/main/squ1rrel%20CTF%202024/write-up-squa1rrel-ctf-2024/image-1.png?raw=true 1.5x, https://github.com/Quandaaaa/Wargames/blob/main/squ1rrel%20CTF%202024/write-up-squa1rrel-ctf-2024/image-1.png?raw=true 2x"
+        data-sizes="auto"
+        alt="https://github.com/Quandaaaa/Wargames/blob/main/squ1rrel%20CTF%202024/write-up-squa1rrel-ctf-2024/image-1.png?raw=true"
+        title="alt text" /></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">e: 3
+</span></span><span class="line"><span class="cl">n1: 96137714481560340073780038250015316564930752333880363375193088083653975552334517899735106334409092229494004991796910602440032630762575914714152238916128674595912438177270978040111855327624812652948702562503276973409716595778936978757384935820012322432156169815110042972411989274515686945691887468406312791931
+</span></span><span class="line"><span class="cl">ct1: 45640508926729498938915879450220374487095109122207451961200230820161694723491945276893630019713859109920025191680053056485030809079137883906737197875968862878423820820515399840094772412319820062860149582361429346029277273870654355752499436360499181221418835401103925420623212341317366954144592892392013649421
+</span></span><span class="line"><span class="cl">n2: 90990790933807553440094447797505116528289571569256574363585309090304380702927241663491819956599368816997683603352289726407304960362149545383683196526764288524742203975596414405902155486632888712453606841629050125783639571606440840246928825545860143096340538904060826483178577619093666337611264852255012241011
+</span></span><span class="line"><span class="cl">ct2: 58149644956871439128498229750735120049939213159976216414725780828349070974351356297226894029560865402164610877553706310307735037479690463594397903663323983980128060190648604447657636452565715178438939334318494616246072096228912870579093620604596752844583453865894005036516299903524382604570097012992290786402
+</span></span><span class="line"><span class="cl">n3: 86223965871064436340735834556059627182534224217231808576284808010466364412704836149817574186647031512768701943310184993378236691990480428328117673064942878770269493388776005967773324771885109757090215809598845563135795831857972778498394289917587876390109949975194987996902591291672194435711308385660176310561
+</span></span><span class="line"><span class="cl">ct3: 16168828246411344105159374934034075195568461748685081608380235707338908077276221477034184557590734407998991183114724523494790646697027318500705309235429037934125253625837179003478944984233647083364969403257234704649027075136139224424896295334075272153594459752240304700899700185954651799042218888117178057955
+</span></span></code></pre></div><p>Với bài này ta nghĩ đến ngay <code>CRT</code>. <br>
+<strong>Solution:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">long_to_bytes</span>
+</span></span><span class="line"><span class="cl"><span class="n">e</span> <span class="o">=</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="n">n1</span> <span class="o">=</span> <span class="mi">96137714481560340073780038250015316564930752333880363375193088083653975552334517899735106334409092229494004991796910602440032630762575914714152238916128674595912438177270978040111855327624812652948702562503276973409716595778936978757384935820012322432156169815110042972411989274515686945691887468406312791931</span>
+</span></span><span class="line"><span class="cl"><span class="n">ct1</span> <span class="o">=</span> <span class="mi">45640508926729498938915879450220374487095109122207451961200230820161694723491945276893630019713859109920025191680053056485030809079137883906737197875968862878423820820515399840094772412319820062860149582361429346029277273870654355752499436360499181221418835401103925420623212341317366954144592892392013649421</span>
+</span></span><span class="line"><span class="cl"><span class="n">n2</span> <span class="o">=</span> <span class="mi">90990790933807553440094447797505116528289571569256574363585309090304380702927241663491819956599368816997683603352289726407304960362149545383683196526764288524742203975596414405902155486632888712453606841629050125783639571606440840246928825545860143096340538904060826483178577619093666337611264852255012241011</span>
+</span></span><span class="line"><span class="cl"><span class="n">ct2</span> <span class="o">=</span> <span class="mi">58149644956871439128498229750735120049939213159976216414725780828349070974351356297226894029560865402164610877553706310307735037479690463594397903663323983980128060190648604447657636452565715178438939334318494616246072096228912870579093620604596752844583453865894005036516299903524382604570097012992290786402</span>
+</span></span><span class="line"><span class="cl"><span class="n">n3</span> <span class="o">=</span> <span class="mi">86223965871064436340735834556059627182534224217231808576284808010466364412704836149817574186647031512768701943310184993378236691990480428328117673064942878770269493388776005967773324771885109757090215809598845563135795831857972778498394289917587876390109949975194987996902591291672194435711308385660176310561</span>
+</span></span><span class="line"><span class="cl"><span class="n">ct3</span> <span class="o">=</span> <span class="mi">16168828246411344105159374934034075195568461748685081608380235707338908077276221477034184557590734407998991183114724523494790646697027318500705309235429037934125253625837179003478944984233647083364969403257234704649027075136139224424896295334075272153594459752240304700899700185954651799042218888117178057955</span>
+</span></span><span class="line"><span class="cl"><span class="n">N</span> <span class="o">=</span> <span class="p">[</span><span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">,</span> <span class="n">n3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">C</span> <span class="o">=</span> <span class="p">[</span><span class="n">ct1</span><span class="p">,</span> <span class="n">ct2</span><span class="p">,</span> <span class="n">ct3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">m</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">crt</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">N</span><span class="p">),</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">long_to_bytes</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>
+</span></span></code></pre></div><blockquote>
+<p>flag: squ1rrel{math_is_too_powerful_1q3y41t1s98u23rf8}</p>
+</blockquote>
+<h1 id="partial-rsa">Partial RSA</h1>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Challenge Information<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="image-2.png"
+        data-srcset="image-2.png, image-2.png 1.5x, image-2.png 2x"
+        data-sizes="auto"
+        alt="image-2.png"
+        title="alt text" /></div>
+        </div>
+    </div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">n: 103805634552377307340975059685101156977551733461056876355507089800229924640064014138267791875318149345634740763575673979991819014964446415505372251293888861031929442007781059010889724977253624216086442025183181157463661838779892334251775663309103173737456991687046799675461756638965663330282714035731741912263
+</span></span><span class="line"><span class="cl">e: 3
+</span></span><span class="line"><span class="cl">ct: 24734873977910637709237800614545622279880260333085506891667302143041484966318230317192234785987158021463825782079898979505470029030138730760671563038827274105816021371073990041986605112686349050253522070137824687322227491501626342218176173909258627357031402590581822729585520702978374712113860530427142416062
+</span></span></code></pre></div><ul>
+<li>
+<p>💡Khi đọc hint của đề, mình biết là phải sử dụng <code>form flag</code> để giải bài này.</p>
+</li>
+<li>
+<p>Flag sẽ có dạng: <code>squ1rrel{?}</code>. Như vậy ta đã biết được 9 bytes đầu của Flag và ta cần tìm các bytes còn lại.</p>
+</li>
+<li>
+<p>Gọi $x$ là đoạn phần flag cần tìm, $a$ là form flag.</p>
+</li>
+<li>
+<p>Ta có:
+$m = \text{bytes_to_long}(a) \times 256^{\text{len}(x)} + \text{bytes_to_long}(x)$</p>
+</li>
+<li>
+<p>Ta có phương trình như sau:
+$$m^3 - ct= 0 \pmod n$$
+Ta sẽ giải phương trình này bằng <code>small_root</code>. Nhưng vì không biết độ dài của flag nên ta sẽ <code>brute-force</code> độ dài của nó.<br>
+<strong>Sage:</strong></p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">bytes_to_long</span><span class="p">,</span> <span class="n">long_to_bytes</span>
+</span></span><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="mi">103805634552377307340975059685101156977551733461056876355507089800229924640064014138267791875318149345634740763575673979991819014964446415505372251293888861031929442007781059010889724977253624216086442025183181157463661838779892334251775663309103173737456991687046799675461756638965663330282714035731741912263</span>
+</span></span><span class="line"><span class="cl"><span class="n">e</span> <span class="o">=</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="mi">24734873977910637709237800614545622279880260333085506891667302143041484966318230317192234785987158021463825782079898979505470029030138730760671563038827274105816021371073990041986605112686349050253522070137824687322227491501626342218176173909258627357031402590581822729585520702978374712113860530427142416062</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="n">bytes_to_long</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;squ1rrel{&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">P</span><span class="o">.&lt;</span><span class="n">x</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">PolynomialRing</span><span class="p">(</span><span class="n">Zmod</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">50</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">f</span> <span class="o">=</span> <span class="p">((</span><span class="n">a</span><span class="o">*</span><span class="mi">256</span><span class="o">**</span><span class="n">i</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tmp</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">small_roots</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="mi">256</span><span class="o">**</span><span class="n">i</span> <span class="p">,</span> <span class="n">beta</span> <span class="o">=</span> <span class="n">i</span><span class="o">/</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;squ1rrel{&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">i</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span> <span class="o">!=</span><span class="mi">0</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;squ1rrel{&#39;</span> <span class="o">+</span> <span class="n">long_to_bytes</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">break</span>
+</span></span></code></pre></div><blockquote>
+<p>flag: squ1rrel{wow_i_was_betrayed_by_my_own_friend}</p>
+</blockquote>
+<h2 id="squ1rrel-treasury">squ1rrel treasury</h2>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Challenge Information<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="image/image-3.png"
+        data-srcset="image/image-3.png, image/image-3.png 1.5x, image/image-3.png 2x"
+        data-sizes="auto"
+        alt="image/image-3.png"
+        title="alt text" /></div>
+        </div>
+    </div>
+<ul>
+<li><code>nc treasury.squ1rrel-ctf-codelab.kctf.cloud 1337</code></li>
+</ul>
+<p><a href="https://squ1rrel-ctf-uploads.storage.googleapis.com/uploads/1f32e9b81e3d43fc0bca8f9b9104ec2cc0173ec1eb441924e2a7b1ab9435bfed/chall.py" target="_blank" rel="noopener noreffer ">chall.py</a></p>
+<p>Đọc kỹ source code ta nhận ra cách mã hóa <code>Key</code> của nó chính là CBC, thế mà ông author cứ thích viết dài dòng thôiii 🤡. Và ta sẽ sử dụng Flip CBC để lấy được FLAG.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">getKey</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">save</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">__name</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">__balance</span><span class="si">}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">encode</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">blocks</span> <span class="o">=</span> <span class="n">blockify</span><span class="p">(</span><span class="n">save</span><span class="p">,</span> <span class="n">AES</span><span class="o">.</span><span class="n">block_size</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">pblocks</span> <span class="o">=</span> <span class="n">pad</span><span class="p">(</span><span class="n">blocks</span><span class="p">,</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x00</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">AES</span><span class="o">.</span><span class="n">block_size</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cipher</span> <span class="o">=</span> <span class="n">AES</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">KEY</span><span class="p">,</span> <span class="n">AES</span><span class="o">.</span><span class="n">MODE_ECB</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ct</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">pblocks</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">tmp</span> <span class="o">=</span> <span class="n">strxor</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__iv</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">ct</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cipher</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="n">tmp</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">tmp</span> <span class="o">=</span> <span class="n">strxor</span><span class="p">(</span><span class="n">strxor</span><span class="p">(</span><span class="n">ct</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">pblocks</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">ct</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cipher</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="n">tmp</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ct_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">__iv</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ct</span><span class="p">))</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">ct_str</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">key_split</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">iv</span> <span class="o">=</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="n">key_split</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ct</span> <span class="o">=</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="n">key_split</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cipher</span> <span class="o">=</span> <span class="n">AES</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">KEY</span><span class="p">,</span> <span class="n">AES</span><span class="o">.</span><span class="n">MODE_ECB</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">pt</span> <span class="o">=</span> <span class="n">blockify</span><span class="p">(</span><span class="n">cipher</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="n">ct</span><span class="p">),</span> <span class="n">AES</span><span class="o">.</span><span class="n">block_size</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ct</span> <span class="o">=</span> <span class="n">blockify</span><span class="p">(</span><span class="n">ct</span><span class="p">,</span> <span class="n">AES</span><span class="o">.</span><span class="n">block_size</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">pt</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">pt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">strxor</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">iv</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">pt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">strxor</span><span class="p">(</span><span class="n">strxor</span><span class="p">(</span><span class="n">ct</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">pt</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span> <span class="n">p</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">pt</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pt</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">pt_split</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">name</span> <span class="o">=</span> <span class="n">pt_split</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">name</span> <span class="o">=</span> <span class="s2">&#34;ERROR&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">balance</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">pt_split</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x00</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">Account</span><span class="p">(</span><span class="n">iv</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">balance</span><span class="p">)</span>
+</span></span></code></pre></div><ul>
+<li>Ban đầu <code>balance = 0</code> và nó sẽ được gộp với <code>name</code> để mã hóa và trả về cho ta <code>ciphertext</code>, <code>iv</code>.</li>
+<li>Ví dụ tên ta gửi vào là: <code>name = &quot;quanda&quot;</code>, thì sẽ trả về <code>encrypt_CBC(&quot;quanda:0&quot;)</code>.</li>
+<li>Ta có <code>max(FLAG_COST) = 10**14-1</code> nên target của ta là <code>balance = max(FLAG_COST)</code>.</li>
+</ul>
+<p><strong>FLip CBC</strong></p>
+<ul>
+<li>
+<p>Cách hoạt động của CBC:
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://aes.cryptohack.org/static/img/CBC_decryption.svg"
+        data-srcset="https://aes.cryptohack.org/static/img/CBC_decryption.svg, https://aes.cryptohack.org/static/img/CBC_decryption.svg 1.5x, https://aes.cryptohack.org/static/img/CBC_decryption.svg 2x"
+        data-sizes="auto"
+        alt="https://aes.cryptohack.org/static/img/CBC_decryption.svg"
+        title="alt text" /></p>
+</li>
+<li>
+<p>Màu xanh của iv cho thấy Plaintext thay đổi với bytes tương ứng với iv. Còn màu đỏ của ciphertext của block thứ 2 nó có ảnh hưởng làm thay đổi toàn bộ plaintext.</p>
+</li>
+<li>
+<p>Ta có: <br>
+$P_1 = Dec_k(C1) \bigoplus IV$ <br></p>
+</li>
+<li>
+<p>Set: $target = Dec_k(C1) \bigoplus IV&rsquo;$
+$\to IV&rsquo; = IV \bigoplus P_1 \bigoplus target$</p>
+</li>
+<li>
+<p>Mình sẽ chọn <code>name = &quot;a&quot;*14</code> khi đó ta sẽ có một block là: <code>p = &quot;aaaaaaaaaaaaaa:0&quot;</code></p>
+</li>
+<li>
+<p>Target mình chọn là <code>t = &quot;a:99999999999999&quot;</code>.</p>
+</li>
+<li>
+<p>Vì không sử dụng quá nhiều payload nên mình sẽ nhập trực tiếp đến server luôn nên sẽ không có script nào cả 🤣.</p>
+</li>
+<li>
+<p>Đây là đoạn tính toán <code>new_iv</code>.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">iv</span> <span class="o">=</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="s1">&#39;4a048459ad3ebc3b68c4c61d091a4b9b&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">target</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;a:&#39;</span><span class="o">+</span><span class="sa">b</span><span class="s1">&#39;9&#39;</span><span class="o">*</span><span class="mi">14</span>
+</span></span><span class="line"><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="s2">&#34;4ccffa2f796ce4381f37ba63a74d8a99&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">new_iv</span> <span class="o">=</span> <span class="n">xor</span><span class="p">(</span><span class="n">xor</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="sa">b</span><span class="s1">&#39;a&#39;</span><span class="o">*</span><span class="mi">14</span><span class="o">+</span><span class="sa">b</span><span class="s1">&#39;:0&#39;</span><span class="p">),</span> <span class="n">iv</span><span class="p">)</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">new_iv</span><span class="p">)</span>
+</span></span></code></pre></div><blockquote>
+<p>Flag: squ1rrel{7H3_4C0rN_3NCrYP710N_5CH3M3_15_14CK1N6}</p>
+</blockquote>
+<h2 id="squ1rrel-lottery">Squ1rrel Lottery</h2>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Challenge Information<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="image-4.png"
+        data-srcset="image-4.png, image-4.png 1.5x, image-4.png 2x"
+        data-sizes="auto"
+        alt="image-4.png"
+        title="alt text" />
+<a href="https://squ1rrel-ctf-uploads.storage.googleapis.com/uploads/e3d653cdb94418525b8d5848b1267d902fb1bbc76191aa26c7826f1ae8495cb0/squ1rrel-lottery.py" target="_blank" rel="noopener noreffer ">squ1rrel-lottery.py</a></p>
+<ul>
+<li><code>nc 34.132.166.199 11112</code></li>
+</ul>
+</div>
+        </div>
+    </div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">random</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># user version</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">input_lines</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Welcome to the squ1rrel lottery! 9 winning numbers will be selected, and if any of your tickets share 3 numbers with the winning ticket you&#39;ll win! Win 1000 times in a row to win a flag&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">41</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">line</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Ticket </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: &#34;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="n">numbers</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">9</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Please enter 9 numbers&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">            <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">num</span> <span class="o">&lt;=</span> <span class="mi">60</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Numbers must be between 1 and 60&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">                <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">numbers</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">                <span class="k">break</span>
+</span></span><span class="line"><span class="cl">            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Please enter only integers.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">lines</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">user_tickets</span> <span class="o">=</span> <span class="n">input_lines</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">wincount</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">winning_ticket</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">61</span><span class="p">),</span> <span class="mi">9</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">win</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">user_tickets</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">winning_ticket</span><span class="p">)))</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Win </span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s1">!&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">win</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">            <span class="n">wincount</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">            <span class="k">break</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="ow">not</span> <span class="n">win</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;99 percent of gamblers quit just before they hit it big&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">break</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">wincount</span> <span class="o">==</span> <span class="mi">1000</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;squ1rrelctf</span><span class="si">{test_flag}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Với challenge này ta sẽ gen ra 40 ticket. Nếu như có một trong 40 ticket đó có 3 số trong winning_ticket thì sẽ thắng. Và ta phải dùng 40 ticket đó để thắng 1000 thì ta sẽ FLAG.</p>
+<p>Mỗi ticket bao gồm 9 số khác nhau từ 1 đến 60.</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-07-22</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/squ1rrel-ctf-2024/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://quanda.github.io/squ1rrel-ctf-2024/" data-title="SQU1RREL CTF 2024" data-hashtags="crypto"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://quanda.github.io/squ1rrel-ctf-2024/" data-hashtag="crypto"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="https://quanda.github.io/squ1rrel-ctf-2024/"><i class="fab fa-reddit fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/crypto/">crypto</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/uiu-crypto/" class="prev" rel="prev" title="UIU CTF 2023 - Cryptography Writeups"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>UIU CTF 2023 - Cryptography Writeups</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.113.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/index.umd.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"data":{"id-1":"Quanda","id-2":"Quanda"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
