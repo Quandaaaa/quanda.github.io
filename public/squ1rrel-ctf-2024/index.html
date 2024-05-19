@@ -7,13 +7,12 @@
         <title>SQU1RREL CTF 2024 - Quanda&#39;s Blog</title><meta name="Description" content="Writeup for The Cryptography challenge."><meta property="og:title" content="SQU1RREL CTF 2024" />
 <meta property="og:description" content="Writeup for The Cryptography challenge." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://quanda.github.io/squ1rrel-ctf-2024/" /><meta property="og:image" content="https://quanda.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://quanda.github.io/squ1rrel-ctf-2024/" /><meta property="og:image" content="https://quanda.github.io/logo.png" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-07-20T15:02:00+06:00" />
 <meta property="article:modified_time" content="2023-07-22T15:20:00+06:00" /><meta property="og:site_name" content="Quanda&#39;s Blog" />
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://quanda.github.io/logo.png"/>
 
-<meta name="twitter:title" content="SQU1RREL CTF 2024"/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://quanda.github.io/logo.png" /><meta name="twitter:title" content="SQU1RREL CTF 2024"/>
 <meta name="twitter:description" content="Writeup for The Cryptography challenge."/>
 <meta name="application-name" content="CTF Blogs">
 <meta name="apple-mobile-web-app-title" content="CTF Blogs"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
@@ -199,7 +198,7 @@
 </span></span><span class="line"><span class="cl">ct: 24734873977910637709237800614545622279880260333085506891667302143041484966318230317192234785987158021463825782079898979505470029030138730760671563038827274105816021371073990041986605112686349050253522070137824687322227491501626342218176173909258627357031402590581822729585520702978374712113860530427142416062
 </span></span></code></pre></div><ul>
 <li>
-<p>💡Khi đọc hint của đề, mình biết là phải sử dụng <code>form flag</code> để giải bài này.</p>
+<p>&#x1f4a1;Khi đọc hint của đề, mình biết là phải sử dụng <code>form flag</code> để giải bài này.</p>
 </li>
 <li>
 <p>Flag sẽ có dạng: <code>squ1rrel{?}</code>. Như vậy ta đã biết được 9 bytes đầu của Flag và ta cần tìm các bytes còn lại.</p>
@@ -208,7 +207,7 @@
 <p>Gọi $x$ là đoạn phần flag cần tìm, $a$ là form flag.</p>
 </li>
 <li>
-<p>Ta có:
+<p>Ta có: <br>
 $m = \text{bytes_to_long}(a) \times 256^{\text{len}(x)} + \text{bytes_to_long}(x)$</p>
 </li>
 <li>
@@ -358,8 +357,7 @@ $\to IV&rsquo; = IV \bigoplus P_1 \bigoplus target$</p>
 <a href="https://squ1rrel-ctf-uploads.storage.googleapis.com/uploads/e3d653cdb94418525b8d5848b1267d902fb1bbc76191aa26c7826f1ae8495cb0/squ1rrel-lottery.py" target="_blank" rel="noopener noreffer ">squ1rrel-lottery.py</a></p>
 <ul>
 <li><code>nc 34.132.166.199 11112</code></li>
-</ul>
-</div>
+</ul></div>
         </div>
     </div>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">random</span>
@@ -433,7 +431,7 @@ $\to IV&rsquo; = IV \bigoplus P_1 \bigoplus target$</p>
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.113.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.121.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
                 </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"></div>
         </div>
     </footer></div>

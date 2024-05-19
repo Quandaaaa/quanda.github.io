@@ -63,7 +63,7 @@ ct: 2473487397791063770923780061454562227988026033308550689166730214304148496631
 
 * Flag sẽ có dạng: `squ1rrel{?}`. Như vậy ta đã biết được 9 bytes đầu của Flag và ta cần tìm các bytes còn lại.
 * Gọi $x$ là đoạn phần flag cần tìm, $a$ là form flag. 
-* Ta có:
+* Ta có: <br>
 $m = \text{bytes\_to\_long}(a) \times 256^{\text{len}(x)} + \text{bytes\_to\_long}(x)$
 * Ta có phương trình như sau:
 $$m^3 - ct= 0 \pmod n$$

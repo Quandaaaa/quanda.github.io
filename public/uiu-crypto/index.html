@@ -7,13 +7,12 @@
         <title>UIU CTF 2023 - Cryptography Writeups - Quanda&#39;s Blog</title><meta name="Description" content="Writeup for the Cryptography challenges."><meta property="og:title" content="UIU CTF 2023 - Cryptography Writeups" />
 <meta property="og:description" content="Writeup for the Cryptography challenges." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://quanda.github.io/uiu-crypto/" /><meta property="og:image" content="https://quanda.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://quanda.github.io/uiu-crypto/" /><meta property="og:image" content="https://quanda.github.io/logo.png" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-07-03T11:02:00+06:00" />
 <meta property="article:modified_time" content="2023-07-03T11:02:00+06:00" /><meta property="og:site_name" content="Quanda&#39;s Blog" />
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://quanda.github.io/logo.png"/>
 
-<meta name="twitter:title" content="UIU CTF 2023 - Cryptography Writeups"/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://quanda.github.io/logo.png" /><meta name="twitter:title" content="UIU CTF 2023 - Cryptography Writeups"/>
 <meta name="twitter:description" content="Writeup for the Cryptography challenges."/>
 <meta name="application-name" content="CTF Blogs">
 <meta name="apple-mobile-web-app-title" content="CTF Blogs"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
@@ -134,7 +133,7 @@
 <li><strong>Description:</strong> &ldquo;We&rsquo;ve been monitoring our adversaries&rsquo; communication channels, but they encrypt their data with XOR one-time pads! However, we hear rumors that they&rsquo;re reusing the pads&hellip;
 Enclosed are three encrypted messages. Our mole overheard the plaintext of message 2. Given this information, can you break the enemy&rsquo;s encryption and get the plaintext of the other messages?&rdquo;</li>
 </ul>
-<p>Artifacts are <a href="https://2023.uiuc.tf/files/4daf6f657250c79cf8d500fc16d805d7/c1" target="_blank" rel="noopener noreffer ">c1</a>, <a href="https://2023.uiuc.tf/files/dd3dbe6e45aa09480fbc794f4ff26936/c2" target="_blank" rel="noopener noreffer ">c2</a>, <a href="https://2023.uiuc.tf/files/e0010beea1f7483e72631e4ea6e927bd/c3" target="_blank" rel="noopener noreffer ">c3</a>, <a href="https://2023.uiuc.tf/files/3d2d3993dbc39c9ee16b927f9e5ac6fc/p2" target="_blank" rel="noopener noreffer ">p2</a>.</div>
+<p>Artifacts are <a href="https://2023.uiuc.tf/files/4daf6f657250c79cf8d500fc16d805d7/c1" target="_blank" rel="noopener noreffer ">c1</a>, <a href="https://2023.uiuc.tf/files/dd3dbe6e45aa09480fbc794f4ff26936/c2" target="_blank" rel="noopener noreffer ">c2</a>, <a href="https://2023.uiuc.tf/files/e0010beea1f7483e72631e4ea6e927bd/c3" target="_blank" rel="noopener noreffer ">c3</a>, <a href="https://2023.uiuc.tf/files/3d2d3993dbc39c9ee16b927f9e5ac6fc/p2" target="_blank" rel="noopener noreffer ">p2</a>.</p></div>
         </div>
     </div>
 <p>Simple XOR challenge. We are given 3 encrypted files <code>c1, c2, c3</code> all encrypted with the same key <code>K</code>. The original second file <code>p2</code> has been given too.
@@ -176,7 +175,7 @@ So it&rsquo;s trivial to retrieve the key now.</p>
 <li><strong>Points:</strong> 50</li>
 <li><strong>Description:</strong> Mom said we had food at home</li>
 </ul>
-<p>Artifacts are <a href="https://2023.uiuc.tf/files/0d49da3310c51c11923c260798245076/chal.py" target="_blank" rel="noopener noreffer ">chal.py</a> and <a href="https://2023.uiuc.tf/files/da5c55d203a146d0a5e7d8b5137172b7/chal.txt" target="_blank" rel="noopener noreffer ">chal.txt</a></div>
+<p>Artifacts are <a href="https://2023.uiuc.tf/files/0d49da3310c51c11923c260798245076/chal.py" target="_blank" rel="noopener noreffer ">chal.py</a> and <a href="https://2023.uiuc.tf/files/da5c55d203a146d0a5e7d8b5137172b7/chal.txt" target="_blank" rel="noopener noreffer ">chal.txt</a></p></div>
         </div>
     </div>
 <p>From the source code, it can be seen that,
@@ -589,7 +588,7 @@ $$({c_1 ^ a}) ^ {-1} * c_2  \equiv\ g^{-2ak} * g^{2ak} * m^2 \equiv\ m^2 \mod p$
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.113.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.121.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
                 </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"></div>
         </div>
     </footer></div>
