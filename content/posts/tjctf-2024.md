@@ -1,17 +1,3 @@
----
-title: "Tjctf 2024"
-date: 2024-05-20T20:07:15+07:00
-draft: false
-author: "Quanda"
-authorLink: "https://quanda.github.io"
-description: "Writeup for The Cryptography challenge."
-tags: ["crypto", "lcg", "hill cipher"]
-categories: ["Writeups"]
-lightgallery: true
-toc:
-  enable: true
----
-
 ![image](https://hackmd.io/_uploads/SkW-Jmd7C.png)
 # Write up for Cryptography challenges
 * Ở giải này mình giải được **5/12** chall trong thời gian diễn ra giải.
@@ -22,7 +8,7 @@ toc:
 **Attachment:** [`a.py`](https://tjctf-2024.storage.googleapis.com/uploads/f52edecdb1b0e1a6909e1f5feee2116c90ca808845f5374c329466ea02176b23/a.py)   [`output.txt`](https://tjctf-2024.storage.googleapis.com/uploads/3889f951209e0a4786057e426af27d3d6379641fda4379fa63b2ad388e4036c2/output.txt)
 
 ---
-```python=
+```python
 from math import lcm
 from Crypto.Util.number import bytes_to_long, getPrime
 
@@ -47,7 +33,7 @@ hehe_secret = pow(flag, crazy_number, discord_mod)
 * Bài này khá đơn giải ta chỉ cần brute-force `oops`.
 
 **script:**
-```python=
+```python
 from Crypto.Util.number import *
 from sympy import nextprime
 
@@ -73,7 +59,7 @@ while 1:
 * Attachment: [`server.py`](https://tjctf-2024.storage.googleapis.com/uploads/e31a1ad02ba2db75ee6a9eb99d1a38b11e4259b4a14d8fa5f0a7212fdf85f5c4/server.py)
 * `nc tjc.tf 31601`
 
-```python=
+```python
 #!/usr/local/bin/python3.10 -u
 
 import time
@@ -135,7 +121,7 @@ $\to N - leak = sub(p+q) - sub^2$
 Mình chuyển qua giải phương trình nhưng cũng không được tối ưu nên mình cầu cứu anh Việt và có được một script hoàn chỉnh.
 
 **Sage:**
-```python=
+```python
 from sage.all import *
 from Crypto.Util.number import *
 from pwn import *
@@ -185,7 +171,7 @@ Bài này mình lấy flag bằng tay nhé (do mình lười code 😅).
 ![image](https://hackmd.io/_uploads/SydQaQdmR.png)
 
 **Attachment:** [`output.txt`](https://tjctf-2024.storage.googleapis.com/uploads/bc721e6e95e934475574351070fa70f74b48e0b78b39f189084b1acf361d1e45/out.txt) [`main.py`](https://tjctf-2024.storage.googleapis.com/uploads/6497e49446d3f2633e9bf3a6679a74c6803cfc7c00cd8b3e9e268afc805fbb23/main.py)
-```python=
+```python
 import secrets
 
 flag = "flagtextttttttttttttttttttttt"
@@ -239,7 +225,7 @@ open("out.txt", "w+").write(str(enc))
 ```
 **output:**
 
-```python=
+```python
 [8103443654527565038, 9131436358818679900, 4957881569325453096, 10608823513649500284, 6675039786579943629, 6611905972844131155, 1244757961681113340, 7547487070745190563, 1913848887301325654, 9737862765813246630, 2820240734893834667, 4787888165190302097, 11681061051439179359, 11976272630379115896, 2884226871403054033, 13149362434991348085, 2676520484503789480, 6933002550284269375, 6634913706901406922, 3790038065981008837, 7593117393518680210, 1266282031812681717, 14297832010203960867, 6803759075981258244, 2235840587449302546, 9573113061825958419, 7208484535445728720, 3230648965441849617, 14844603229849620928, 2548590493342454145, 12648684202717570605, 8664656898390315577, 13502288186462622020, 8391628990279857365, 5501744205282111713, 5327399420219427046, 904912426181632886, 4805354280735678357, 12915117098149429818, 12340346813869037506, 9907136040657333887, 12822605127735793613]
 ```
 
@@ -251,7 +237,7 @@ open("out.txt", "w+").write(str(enc))
 - Ta sẽ brute-force 3 ký tự đó nó chỉ rơi vào khoảng $75*74*73 = 405150$ nên ta có thể brute một cách nhanh chóng.
 
 **Sage**
-```python=
+```python
 flag_enc = [8103443654527565038, 9131436358818679900, 4957881569325453096, 10608823513649500284, 6675039786579943629, 6611905972844131155, 1244757961681113340, 7547487070745190563, 1913848887301325654, 9737862765813246630, 2820240734893834667, 4787888165190302097, 11681061051439179359, 11976272630379115896, 2884226871403054033, 13149362434991348085, 2676520484503789480, 6933002550284269375, 6634913706901406922, 3790038065981008837, 7593117393518680210, 1266282031812681717, 14297832010203960867, 6803759075981258244, 2235840587449302546, 9573113061825958419, 7208484535445728720, 3230648965441849617, 14844603229849620928, 2548590493342454145, 12648684202717570605, 8664656898390315577, 13502288186462622020, 8391628990279857365, 5501744205282111713, 5327399420219427046, 904912426181632886, 4805354280735678357, 12915117098149429818, 12340346813869037506, 9907136040657333887, 12822605127735793613]
 flag_enc = [flag_enc[i*3:(i+1)*3] for i in range(len(flag_enc)//3)]
 
@@ -299,7 +285,7 @@ Flag: `tjctf{aint_no_hillllll_55e4$S56a356^#@!$}`
 
 **Attachment:** [`out.txt`](https://tjctf-2024.storage.googleapis.com/uploads/449fcf7379f2d3f2ba3bf0fe8696be65872e48114fb2a10a098096cb3e21c302/out.txt) [`encode.py`](https://tjctf-2024.storage.googleapis.com/uploads/3b712257e0c28aee57b8db567d619a48fab68d915b707722c5e4cf9cda905a66/encode.py) 
 
-```python=
+```python
 #!/usr/local/bin/python3.10 -u
 
 from Crypto.Util.number import *
@@ -346,13 +332,13 @@ with open("out.txt", "w") as wfile:
     wfile.write(" ".join([str(i) for i in x]) + "\n")
 
 ```
-**output** hơi dài nên bạn có thể tải về rồi xem nhé.
+**output** hơi dài nên bạn có thể tải về rồi xem nhé. <br>
 
 Đây là một bài về [Linear congruential generator(lcg)](https://en.wikipedia.org/wiki/Linear_congruential_generator) đọc qua nếu bạn chưa biết gì về nó.
 Với giá trị $x_0$ ban đầu ta gen ra được các giá trị tiếp theo:
 $$x_i = x_{i-1}*a +  c \pmod n$$
-Nhưng ở đây có điều đặc biệt là những số từ LCG mà ta nhận được không phải 6 số liên tiếp mà nó kiểu như thế này:
-$[x_1, x_{n +1}, x_{n*2 +1}, \dots x_{n*5 +1}], \text{với n = 987}$
+Nhưng ở đây có điều đặc biệt là những số từ LCG mà ta nhận được không phải 6 số liên tiếp mà nó kiểu như thế này: <br>
+$s = [x_1, x_{n +1}, x_{n*2 +1}, \dots x_{n*5 +1}], \text{với n = 987}$
 
 **Ta thấy rằng:**
 
@@ -389,7 +375,7 @@ Y_{n+2} &\equiv A \cdot Y_{n+1} \equiv A^3 \cdot Y_{n-1} \pmod m\\
 $$Y_{n+2} \cdot Y_n - {Y_{n+1}}^2 \equiv Y_{n-1} \cdot (A^4-A^4) \equiv 0 \pmod m$$ 
 Như vậy chúng ta đã tạo ra một bội của $m$, thực hiện gcd cho các bội này ta tìm được $m$.
 
-```python=
+```python
 s = [123855601, 1877660078, 2332452388, 2265666365, 2173629406, 2460275121]
 t = []
 for i in range(5):
@@ -418,7 +404,7 @@ Tìm c:
 $K = c \cdot \dfrac{a^n - 1}{a-1} \Rightarrow c = K \cdot (a-1) \cdot {(a^n -1)}^{-1} \bmod m$
 
 Có $a, c$ thế vào $x_1 = a \cdot x_0 + c \bmod m$ và giải ra $x_0$
-```python=
+```python
 s = [GF(m)(i) for i in s]
 
 A = (s[2] - s[1])*pow((s[1]-s[0]), -1, m)
@@ -432,7 +418,7 @@ x0 = (s[0] -c) * pow(a, -1, m)
 ```
 
 ### 5.3 Lấy Flag
-```python=
+```python
 m = 2584844783
 a = 779849675 
 c = 23327 
@@ -465,4 +451,3 @@ print(''.join([chr(i) for i in flag_enc]))
 > Flag: tjctf{1t_15_a_p3r1od_of_c1v1l_war5_1n_th3_galaxy._a_brav3_all1anc3_of_und3rground_fr33dom_f1ght3r5_ha5_chall3ng3d_th3_tyranny_and_oppr3551on_of_th3_aw35om3_galact1c_3mp1r3._5tr1k1ng_from_a_fortr355_h1dd3n_among_th3_b1ll1on_5tar5_of_th3_galaxy,_r3b3l_5pac35h1p5_hav3_won_th31r_f1r5t_v1ctory_1n_a_battl3_w1th_th3_pow3rful_1mp3r1al_5tarfl33t._th3_3mp1r3_f3ar5_that_anoth3r_d3f3at_coult5_compl3t1on_5p3ll5_c3rta1n_doom_for_th3_champ1on5_of_fr33dom.}
 
 ## Loading .........
-
