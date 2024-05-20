@@ -342,9 +342,6 @@ $${\displaystyle {\begin{pmatrix}q_{n}&q_{n-1}&\cdots &q_{1}&q_{0}&0&\cdots &0\e
 Ví dụ $m = 4$ và $n = 3$ thì ma trận sẽ là:
 
 $$S_{p,q} = {\begin{pmatrix}p_{4}&p_{3}&p_{2}&p_{1}&p_{0}&0&0\\0&p_{4}&p_{3}&p_{2}&p_{1}&p_{0}&0\\0&0&p_{4}&p_{3}&p_{2}&p_{1}&p_{0}\\q_{3}&q_{2}&q_{1}&q_{0}&0&0&0\\0&q_{3}&q_{2}&q_{1}&q_{0}&0&0\\0&0&q_{3}&q_{2}&q_{1}&q_{0}&0\\0&0&0&q_{3}&q_{2}&q_{1}&q_{0}\end{pmatrix}}$$
-$$
-S_{p,q} = {\begin{pmatrix}p_{4}&p_{3}&p_{2}&p_{1}&p_{0}&0&0\\\0&p_{4}&p_{3}&p_{2}&p_{1}&p_{0}&0\\\0&0&p_{4}&p_{3}&p_{2}&p_{1}&p_{0}\\\q_{3}&q_{2}&q_{1}&q_{0}&0&0&0\\\0&q_{3}&q_{2}&q_{1}&q_{0}&0&0\\\0&0&q_{3}&q_{2}&q_{1}&q_{0}&0\\\0&0&0&q_{3}&q_{2}&q_{1}&q_{0}\end{pmatrix}}.
-$$
 
 Khi đó định thức của **Sylvester matrix** ($det(S)$) chính là *resultant* của 2 đa thức.
 Nếu 2 đa thức có nghiệm chung thì:<br>

@@ -1,7 +1,7 @@
 ---
 title: "Tjctf 2024"
 date: 2024-05-20T20:07:15+07:00
-draft: true
+draft: false
 author: "Quanda"
 authorLink: "https://quanda.github.io"
 description: "Writeup for The Cryptography challenge."
