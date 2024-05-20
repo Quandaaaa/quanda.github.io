@@ -21,7 +21,7 @@ Trong giải mình chỉ giải được một bài Evil ECB và mình chỉ m�
 * nc 103.163.24.78 2003
 
 **server.py**
-```python=
+```python
 from Crypto.Cipher import AES 
 from Crypto.Util.Padding import pad, unpad
 from os import urandom
@@ -228,8 +228,8 @@ Xếp 3 pixels thành một ma trận và mã hóa như sau:
 Ta nhận thấy những pixel ngoài cùng là màu trắng. Suy ra ta có:
 
 $A_0 = \begin{pmatrix}
-255 & 255 & 255\\
-255 & 255 & 255\\
+255 & 255 & 255\\\
+255 & 255 & 255\\\
 255 & 255 & 255
 \end{pmatrix}$
 
@@ -342,7 +342,7 @@ $${\displaystyle {\begin{pmatrix}q_{n}&q_{n-1}&\cdots &q_{1}&q_{0}&0&\cdots &0\e
 Ví dụ $m = 4$ và $n = 3$ thì ma trận sẽ là:
 
 $$
-S_{p,q} = {\begin{pmatrix}p_{4}&p_{3}&p_{2}&p_{1}&p_{0}&0&0\\0&p_{4}&p_{3}&p_{2}&p_{1}&p_{0}&0\\0&0&p_{4}&p_{3}&p_{2}&p_{1}&p_{0}\\q_{3}&q_{2}&q_{1}&q_{0}&0&0&0\\0&q_{3}&q_{2}&q_{1}&q_{0}&0&0\\0&0&q_{3}&q_{2}&q_{1}&q_{0}&0\\0&0&0&q_{3}&q_{2}&q_{1}&q_{0}\end{pmatrix}}.
+S_{p,q} = {\begin{pmatrix}p_{4}&p_{3}&p_{2}&p_{1}&p_{0}&0&0\\\0&p_{4}&p_{3}&p_{2}&p_{1}&p_{0}&0\\\0&0&p_{4}&p_{3}&p_{2}&p_{1}&p_{0}\\\q_{3}&q_{2}&q_{1}&q_{0}&0&0&0\\\0&q_{3}&q_{2}&q_{1}&q_{0}&0&0\\\0&0&q_{3}&q_{2}&q_{1}&q_{0}&0\\\0&0&0&q_{3}&q_{2}&q_{1}&q_{0}\end{pmatrix}}.
 $$
 
 Khi đó định thức của **Sylvester matrix** ($det(S)$) chính là *resultant* của 2 đa thức.
