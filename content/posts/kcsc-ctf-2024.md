@@ -227,11 +227,11 @@ Xếp 3 pixels thành một ma trận và mã hóa như sau:
 
 Ta nhận thấy những pixel ngoài cùng là màu trắng. Suy ra ta có:
 
-$A_0 = \begin{bmatrix}
+$A_0 = \begin{pmatrix}
 255 & 255 & 255\\
 255 & 255 & 255\\
 255 & 255 & 255
-\end{bmatrix}$
+\end{pmatrix}$
 
 Có $A_0$ ta tính được $M = A'_0 - A_0$ và các giá trị còn lại.
 
@@ -341,7 +341,9 @@ $${\displaystyle {\begin{pmatrix}q_{n}&q_{n-1}&\cdots &q_{1}&q_{0}&0&\cdots &0\e
 
 Ví dụ $m = 4$ và $n = 3$ thì ma trận sẽ là:
 
-$S_{p,q} = {\begin{pmatrix}p_{4}&p_{3}&p_{2}&p_{1}&p_{0}&0&0\\0&p_{4}&p_{3}&p_{2}&p_{1}&p_{0}&0\\0&0&p_{4}&p_{3}&p_{2}&p_{1}&p_{0}\\q_{3}&q_{2}&q_{1}&q_{0}&0&0&0\\0&q_{3}&q_{2}&q_{1}&q_{0}&0&0\\0&0&q_{3}&q_{2}&q_{1}&q_{0}&0\\0&0&0&q_{3}&q_{2}&q_{1}&q_{0}\end{pmatrix}}.$
+$$
+S_{p,q} = {\begin{pmatrix}p_{4}&p_{3}&p_{2}&p_{1}&p_{0}&0&0\\0&p_{4}&p_{3}&p_{2}&p_{1}&p_{0}&0\\0&0&p_{4}&p_{3}&p_{2}&p_{1}&p_{0}\\q_{3}&q_{2}&q_{1}&q_{0}&0&0&0\\0&q_{3}&q_{2}&q_{1}&q_{0}&0&0\\0&0&q_{3}&q_{2}&q_{1}&q_{0}&0\\0&0&0&q_{3}&q_{2}&q_{1}&q_{0}\end{pmatrix}}.
+$$
 
 Khi đó định thức của **Sylvester matrix** ($det(S)$) chính là *resultant* của 2 đa thức.
 Nếu 2 đa thức có nghiệm chung thì:
