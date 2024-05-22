@@ -1,7 +1,21 @@
+---
+title: "TJCTF 2024"
+date: 2024-05-19T13:35:02+07:00
+draft: false
+author: "Quanda"
+authorLink: "https://quanda.github.io"
+description: "Writeup for The Cryptography challenge."
+tags: ["crypto", "lcg", "hill cipher"]
+categories: ["Writeups"]
+lightgallery: true
+toc:
+  enable: true
+---
+
 ![image](https://hackmd.io/_uploads/SkW-Jmd7C.png)
 # Write up for Cryptography challenges
+<!--more-->
 * Ở giải này mình giải được **5/12** chall trong thời gian diễn ra giải.
-
 ## 1. weird-crypto
 ![image](https://hackmd.io/_uploads/Sygn17OXA.png)
 
@@ -335,19 +349,19 @@ with open("out.txt", "w") as wfile:
 **output** hơi dài nên bạn có thể tải về rồi xem nhé. <br>
 
 Đây là một bài về [Linear congruential generator(lcg)](https://en.wikipedia.org/wiki/Linear_congruential_generator) đọc qua nếu bạn chưa biết gì về nó.
-Với giá trị $x_0$ ban đầu ta gen ra được các giá trị tiếp theo:
-$$x_i = x_{i-1}*a +  c \pmod n$$
+Với giá trị $x_0$ ban đầu ta gen ra được các giá trị tiếp theo: <br>
+
+$x_i = x_{i-1}*a +  c \pmod n$ <br>
+
 Nhưng ở đây có điều đặc biệt là những số từ LCG mà ta nhận được không phải 6 số liên tiếp mà nó kiểu như thế này: <br>
-$s = [x_1, x_{n +1}, x_{n*2 +1}, \dots x_{n*5 +1}], \text{với n = 987}$
+
+$s = [x_1, x_{n +1}, x_{n*2 +1}, \dots x_{n*5 +1}], \text{với n = }987$
 
 **Ta thấy rằng:**
 
 $$\begin{align*}
-    x_1 & = (a x_0 + c) \bmod m \\
-    x_2 & = (a x_1 + c) \bmod m = (a \cdot (a x_0 + c) + c) = (a^2 x_0 + c \cdot (a+1)) \bmod m \\ 
-    x_3 & = (a x_2 + c) \bmod m = \ldots = a^3 x_0 + a^2 c + ac + c = a^3 x_0 + c \cdot (1 + a + a^2) \cdot c \bmod m \\ 
-\vdots
-\end{align*}$$
+x_1 & = (a x_0 + c) \bmod m \\
+x_2 & = (a x_1 + c) \bmod m = (a \cdot (a x_0 + c) + c) = (a^2 x_0 + c \cdot (a+1))\bmod m \\ x_3 & = (a x_2 + c) \bmod m = \ldots = a^3 x_0 + a^2 c + ac + c = a^3 x_0 + c \cdot (1 + a + a^2) \cdot c \bmod m \\ \vdots\end{align*}$$
 
 * Vì $1, (a+1), (1 + a + a^2)$ lần lượt là tổng các cấp số nhân nên ta sẽ có một công thức tổng quát như sau:
 $$x_i = a^i \cdot x_0 + c \cdot \dfrac{a^i - 1}{a-1}$$
@@ -362,8 +376,8 @@ Trong đó:
 
 Giờ ta một LCG mới với hệ số là $a^n, K$ giải bình thường để tìm tìm $a^n, K$ sau đó là tìm $c$ và $a$.
 ### 5.1 Tìm m
-Ở đây mình sẽ nêu cách tìm tổng quát nhé. Mình đọc được ở cái [link](https://math.stackexchange.com/questions/2724959/how-to-crack-a-linear-congruential-generator-lcg) này.
-Xét $Y_n = X_{n+1} - X_n$
+Ở đây mình sẽ nêu cách tìm tổng quát nhé. Mình đọc được ở cái [link](https://math.stackexchange.com/questions/2724959/how-to-crack-a-linear-congruential-generator-lcg) này. <br>
+Xét $Y_n = X_{n+1} - X_n$ <br>
 - Ta có:
 $Y_{n+1} = X_{n+2} - X_{n+2} = (A \cdot X_{n+1} + K) - (A \cdot X_n + K) = A \cdot (X_{n+1} - X_n) = A \cdot Y_n$
 - Với $Y_n= A \cdot Y_{n-1}$ ta sẽ có:
@@ -398,9 +412,9 @@ X_2 - X_1 = A \cdot (X_1 - X_0) \bmod m \\
 \end{align*}\end{split}$$
 
 Thế $A$ vào $X_1 = A \cdot X_0 + K$ và tìm được $K$ <br>
-Tìm a: <br>
-$A = a^n \Rightarrow a = A^d \bmod m, \text{ với } d = n^{-1} \bmod (m-1)$
-Tìm c:
+**Tìm a:** <br>
+$A = a^n \Rightarrow a = A^d \bmod m, \text{ với } d = n^{-1} \bmod (m-1)$ <br>
+**Tìm c:** <br>
 $K = c \cdot \dfrac{a^n - 1}{a-1} \Rightarrow c = K \cdot (a-1) \cdot {(a^n -1)}^{-1} \bmod m$
 
 Có $a, c$ thế vào $x_1 = a \cdot x_0 + c \bmod m$ và giải ra $x_0$
