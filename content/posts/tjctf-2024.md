@@ -248,7 +248,7 @@ open("out.txt", "w+").write(str(enc))
 Để lấy được key mình sẽ thực hiện như sau:
 - Key là một ma trận $3 \times 3$ 
 - Form flag là `tjctf{` ta đã có 6 ký tự chỉ còn thiếu 3 ký tự nữa là đủ một ma trận $3 \times 3$. 
-- Ta sẽ brute-force 3 ký tự đó nó chỉ rơi vào khoảng $75*74*73 = 405150$ nên ta có thể brute một cách nhanh chóng.
+- Ta sẽ brute-force 3 ký tự đó nó chỉ rơi vào khoảng $75 \times 74 \times 73 = 405150$ nên ta có thể brute một cách nhanh chóng.
 
 **Sage**
 ```python
@@ -355,7 +355,7 @@ $x_i = x_{i-1}*a +  c \pmod n$ <br>
 
 Nhưng ở đây có điều đặc biệt là những số từ LCG mà ta nhận được không phải 6 số liên tiếp mà nó kiểu như thế này: <br>
 
-$s = [x_1, x_{n +1}, x_{n*2 +1}, \dots x_{n*5 +1}], \text{với n = }987$
+$s = [x_1, x_{n +1}, x_{n*2 +1}, \dots x_{n*5 +1}]$, với $n = 987$
 
 **Ta thấy rằng:**
 
